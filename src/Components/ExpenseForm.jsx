@@ -8,7 +8,6 @@ const ExpenseForm = () => {
     const [type, setType] = useState("debit")
     const [expense, setExpense] = useState([])
 
-
     const addAmount = (e) => {
         e.preventDefault();
         if (!title || !amount) {
@@ -32,26 +31,27 @@ const ExpenseForm = () => {
     }
 
     return (
-        <div className='w-screen min-h-screen bg-cyan-900  flex flex-col justify-center items-center p-4 overflow-auto'>
-
-            <div className='text-white text-2xl md:text-3xl font-bold p-2'>
+        <div className="w-full min-h-screen bg-cyan-900 flex flex-col justify-center items-center p-4 ">
+            
+            <div className="text-white text-2xl md:text-3xl font-bold p-2">
                 <h2>Track Your Expense</h2>
             </div>
 
-            <div className='w-full max-w-[90%] h-screen md:max-w-[60%]  lg:max-w-[50%]  border border-white/30 rounded-2xl shadow-lg p-6 backdrop-blur-lg bg-white/10 text-center overflow-auto'>
-                <div className='p-2 text-white flex flex-col gap-4'>
-                    <form className='flex flex-wrap gap-2 md:gap-4 items-center justify-center' onSubmit={addAmount}>
-                        <label htmlFor="balance" className='text-sm md:text-base'>Expenses</label>
+            <div className="w-full max-w-[600px] h-[80vh] border border-white/30 rounded-2xl shadow-lg p-6 backdrop-blur-lg bg-white/10 text-center overflow-y-auto hide-scrollbar">
+                
+                <div className="p-2 text-white flex flex-col gap-4">
+                    <form className="flex flex-wrap gap-2 md:gap-4 items-center justify-center" onSubmit={addAmount}>
+                        <label htmlFor="balance" className="text-sm md:text-base">Expenses</label>
 
                         <input
                             type="text"
                             id="title"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
-                            placeholder='Expense Title'
+                            placeholder="Expense Title"
                             required
                             autoFocus
-                            className='text-white border border-white rounded-lg pl-2 py-1 outline-none w-full md:w-auto'
+                            className="text-white border border-white rounded-lg pl-2 py-1 outline-none w-full md:w-auto"
                         />
 
                         <input
@@ -59,11 +59,11 @@ const ExpenseForm = () => {
                             id="balance"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
-                            placeholder='Amount'
+                            placeholder="Amount"
                             required
                             max={99999999}
                             min={0}
-                            className='text-white border border-white rounded-lg pl-2 py-1 outline-none w-full md:w-auto'
+                            className="text-white border border-white rounded-lg pl-2 py-1 outline-none w-full md:w-auto"
                         />
 
                         <select
@@ -78,20 +78,15 @@ const ExpenseForm = () => {
                             <option value="credit">Credit</option>
                         </select>
 
-                        <button onClick={addAmount} className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded transition-transform duration-200 hover:scale-105">
+                        <button type="submit" className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded transition-transform duration-200 hover:scale-105">
                             Add Expense
                         </button>
                     </form>
                 </div>
 
-
                 <div>
                     <ExpenseList expenses={expense} deleteExpense={deleteExpense} />
-
-
-                    <div>
-                        <TotalAmount expenses={expense} />
-                    </div>
+                    <TotalAmount expenses={expense} />
                 </div>
             </div>
         </div>

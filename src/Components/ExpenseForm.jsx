@@ -31,12 +31,12 @@ const ExpenseForm = () => {
     }
 
     return (
-        <div className="w-full h-screen bg-cyan-900 flex flex-col justify-center items-center p-4 overflow-auto scrollbar-hide">
+        <div className="w-full h-screen bg-cyan-900 flex flex-col justify-center items-center p-4">
         <div className="text-white text-2xl md:text-3xl font-bold p-2">
             <h2>Track Your Expense</h2>
         </div>
     
-        <div className="w-full max-w-[600px] h-[80vh] border border-white/30 rounded-2xl shadow-lg p-6 backdrop-blur-lg bg-white/10 text-center overflow-auto scrollbar-hide">
+        <div className="w-full max-w-[600px] h-[80vh] border border-white/30 rounded-2xl shadow-lg p-6 backdrop-blur-lg bg-white/10 text-center overflow-auto scrollbar-hide ">
             <div className="p-2 text-white flex flex-col gap-4">
                 <form className="flex flex-wrap gap-2 md:gap-4 items-center justify-center" onSubmit={addAmount}>
                     <label htmlFor="balance" className="text-sm md:text-base">Expenses</label>
@@ -78,7 +78,7 @@ const ExpenseForm = () => {
                 </form>
             </div>
     
-            <div>
+            <div className='flex flex-col justify-between h-[79%]'>
                 <ExpenseList expenses={expense} deleteExpense={deleteExpense} />
                 <TotalAmount expenses={expense} />
             </div>

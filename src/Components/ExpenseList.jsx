@@ -7,8 +7,8 @@ const ExpenseList = ({ expenses, deleteExpense }) => {
             <div className='text-white text-2xl mt-4 p-2 text-center'>
                 <h1>Expense List</h1>
             </div>
-            <div className='w-full  h-96 overflow-auto scrollbar-hide '>
-                <table className='w-full min-w-max text-center bg-white/10 rounded-lg p-2 text-white'>
+            <div className='w-full max-h-[160px] overflow-auto scrollbar-hide rounded-lg'>
+                <table className='w-full min-w-max text-center bg-white/10 rounded-lg p-2 text-white overflow-y-auto '>
                     <thead>
                         <tr>
                             <th className="p-2 border-b border-white text-sm md:text-base">Title</th>

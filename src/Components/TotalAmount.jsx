@@ -10,7 +10,7 @@ const totalDebit = expenses.filter(expense=>expense.type === 'debit').reduce((su
 const balance = totalCredit-totalDebit
     return (
         <div>
-            <div className="border border-white/30 rounded-lg shadow-md p-4 text-white text-center mt-4 bg-white/10">
+            <div className="border border-white/30 rounded-lg shadow-md p-2 text-white text-center mt-4 bg-white/10">
                 <h2 className="text-xl font-semibold">Total Summary</h2>
                 <p className="text-green-400">Total Credit: ₹{totalCredit.toFixed(2)}</p>
                 <p className="text-red-400">Total Debit: ₹{totalDebit.toFixed(2)}</p>

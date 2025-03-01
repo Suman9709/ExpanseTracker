@@ -1,6 +1,7 @@
 import React from 'react'
 
 const ExpenseList = ({ expenses, deleteExpense }) => {
+    // console.log('prop' , expenses)
     return (
         <div className='w-full '>
 
